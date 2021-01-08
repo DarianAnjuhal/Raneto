@@ -31,3 +31,6 @@ themes/default/public/lib/
 .DS_Store
 
 .idea
+
+#ignore vscode
+.vscode

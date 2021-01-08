@@ -40,6 +40,7 @@ function initialize (config) {
   var route_home                = require('./routes/home.route.js')                     (config);
   var route_wildcard            = require('./routes/wildcard.route.js')                 (config);
   var route_sitemap             = require('./routes/sitemap.route.js')                  (config);
+  var route_pdf                 = require('./routes/pdf.route.js')                      (config);
 
   // New Express App
   var app = express();
@@ -95,6 +96,8 @@ function initialize (config) {
     router.get('/logout', route_logout);
     router.get('/login',     route_login_page);
   }
+
+  router.get('/pdf', route_pdf);
 
   // Online Editor Routes
   if (config.allow_editing === true) {
