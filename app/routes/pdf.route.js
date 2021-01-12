@@ -51,14 +51,6 @@ function route_pdf (config) {
 
     await mdToPdf({ content: currentContent }, { dest: pdf_filepath });
 
-    try {
-      const fd = fs.openSync(pdf_filepath, "r");
-      fs.fchmodSync(fd, 0o777);
-      console.log("File permission change succcessful");
-    } catch (error) {
-      console.log(error);
-    }
-
     return res.sendFile(pdf_filepath);
 
   };
